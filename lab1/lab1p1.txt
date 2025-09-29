@@ -1,0 +1,26 @@
+1) list
+The command "list" was used to display the source code with line numbers. This helped me confirm the correct file was loaded into GDB, as well as to locate the functions "main" and `square`. Example output: shows lines of gdbtest.c with their line numbers.
+
+2) break square 
+The command "break square" set a breakpoint at the start of the function "square". This caused the program to pause every time "square" was being called. This allowed me to inspect the function's arguments and local variables. When the program first hits this breakpoint, GDB reported the file and line where execution was paused.
+
+3) run
+I used the command "run" to start the program. I had a breakpoint set at "square", which meant "run" started the program and then stopped when "square" was first called. This is how I got into the debugging session without running the whole program to completion.
+
+4) print x
+While paused at the breakpoint inside "square", I used "print x" to display the value of "x". As a reuslt, this confirmed the function was given the expected value (first $1 = 2), which is important for verifying the program state.
+
+5) next
+Finally, I used "next" to execute the current line (int y = x * x;) and move to the next line. After "next", I used "print y" to verify that "y" had been correctly assigned ($2 = 4). "next" is helpful when wanting to execute a line and stay in the current stack frame without stepping into any other function calls.
+
+Steps:
+1. gcc -g -o gdbtest gdbtest.c
+2. gdb gdbtest
+3. (gdb) list
+4. (gdb) break square
+5. (gdb) run
+6. (gdb) print x
+7. (gdb) next
+8. (gdb) print y
+9. (gdb) continue
+10. (gdb) quit
