@@ -15,7 +15,7 @@
  *   - Convert letters to uppercase.
  *   - Reverse each word in place when a non-alphabetic character is found.
  *   - Replace underscores with spaces and leave other non-alphabetic characters unchanged.
- * - Write the processed line to the output file and close files.
+ * - Write the processed line to the output file and the close files.
  */
 
 
