@@ -2,7 +2,7 @@ Lab 1 - README
 
 Student names: Allyson Morris & Krishna Swaminathan
 
-Effort distribution: 50% 50% (Allyson: Q1, Q2, Q3 + README + Krishna: Q4, Q5)
+Effort distribution: 45% 50% (Allyson: Q1, Q2, Q3 + README + Krishna: Q4, Q5)
 
 Total time: 6 hours
 
