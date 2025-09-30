@@ -1,3 +1,24 @@
+/*
+ * Programmer: Allyson Morris
+ * 
+ * Lab 1 - Part 3
+ *
+ * Problem: This program reads a single line from an input file, reverses 
+ * each word while keeping non-alphabetic characters in place, converts letters 
+ * to uppercase, which is then put in an output file.
+ *
+ * Solution Method: 
+ * - Open input and output files.
+ * - Read one line of input.
+ * - Use pointers to iterate through the line:
+ *   - Identify words as sequences of alphabetic characters.
+ *   - Convert letters to uppercase.
+ *   - Reverse each word in place when a non-alphabetic character is found.
+ *   - Replace underscores with spaces and leave other non-alphabetic characters unchanged.
+ * - Write the processed line to the output file and close files.
+ */
+
+
 #include <stdio.h>
 #include <ctype.h>
 
