@@ -1,5 +1,5 @@
 1) list
-The command "list" was used to display the source code with line numbers. This helped me confirm the correct file was loaded into GDB, as well as to locate the functions "main" and `square`. Example output: shows lines of gdbtest.c with their line numbers.
+The command "list" was used to display the source code with line numbers. This helped me confirm the correct file was loaded into GDB, as well as to locate the functions "main" and `square`. Example output shows lines of gdbtest.c with their line numbers.
 
 2) break square 
 The command "break square" set a breakpoint at the start of the function "square". This caused the program to pause every time "square" was being called. This allowed me to inspect the function's arguments and local variables. When the program first hits this breakpoint, GDB reported the file and line where execution was paused.
