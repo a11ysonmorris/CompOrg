@@ -9,7 +9,7 @@
  *
  * Solution Method: 
  * - The program has three functions: 
- *   1) print_half_message: prints a static message.
+ *   1) print_half_message: prints a message.
  *   2) print_difference: takes two integers, calculates their difference, and prints it.
  *   3) print_division: takes two floats, divides them, and prints the result.
  * - The main function calls these three functions with example values.
@@ -17,7 +17,7 @@
 
 #include <stdio.h>
 
-// Function a: print a simple message
+// Function a: print a message
 void print_half_message() {
     printf("One half is 50%%\n");
 }
