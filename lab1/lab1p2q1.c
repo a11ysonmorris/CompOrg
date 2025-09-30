@@ -17,25 +17,28 @@
 
 #include <stdio.h>
 
-// Function a
+// Function a: print a simple message
 void print_half_message() {
     printf("One half is 50%%\n");
 }
 
-// Funciton b
+//Function b: calculate and print the difference between two integers
 void print_difference(int a, int b) {
     printf("The difference between %d and %d is %d\n", a, b, a - b);
 }
 
-// Function c
+// Function c: calculate and print the division of two floating-point numbers
 void print_division(float x, float y) {
     printf("%f / %f is %f\n", x, y, x / y);
 }
 
-//Values for functions
+// Call each function with example values 
 int main(void) {
+     // Prints the half message
     print_half_message();
+    // Calculate and print the difference between 10 and 2
     print_difference(10, 2);
+    // Calculate and print the division of 5.0 by 2.0
     print_division(5.0, 2.0);
 
     return 0;
