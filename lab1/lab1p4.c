@@ -2,7 +2,7 @@
  * lab1p4.c
  * CSCI 304 - Fall 2025
  *
- * Author: [Your Name]
+ * Author: Krishna Swaminathan and Allyson Morris
  * Description:
  *   Implements a linked list where:
  *     - Words starting with uppercase letters go to the beginning.
