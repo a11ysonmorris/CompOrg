@@ -1,3 +1,17 @@
+/*
+ * Programmer: Allyson Morris and Krishna Swaminathan
+ * Program: gdbtest.c
+ *
+ * Problem:
+ *   Show the use of functions and variables in C and provide
+ *   a program that can be debugged using GDB.
+ *
+ * Method of Solution:
+ *   The program defines a function `square` that takes an integer
+ *   argument and computes its square. The main function calls `square`
+ *   with different values and prints the results.
+ */
+
 1) list
 The command "list" was used to display the source code with line numbers. This helped me confirm the correct file was loaded into GDB, as well as to locate the functions "main" and `square`. Example output shows lines of gdbtest.c with their line numbers.
 
