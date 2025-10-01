@@ -1,5 +1,5 @@
 /*
- * Programmer: Allyson Morris
+ * Programmer: Allyson Morris and Krishna Swaminathan
  * 
  * Lab 1 - Part 2, Question 2
  *
