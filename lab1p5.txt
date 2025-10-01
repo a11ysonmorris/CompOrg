@@ -1,0 +1,36 @@
+Krishna Swaminathan, Allyson Morris
+
+Step 1: I chose to use Claude by Anthropic because it's free and accessible. I also have used it before and have had good results.
+
+Step 2: 
+Write a C program that implements a linked list with the below requirements:
+1. Create a struct "Node" with:
+   - data: char pointer
+   - next: pointer to Node
+
+2. Create a struct "Linkedlist" with:
+   - head: pointer to Node
+
+3. The main function should:
+   - Read command-line arguments
+   - Initialize a linked list
+   - Insert arguments starting with uppercase letters at the beginning (in order)
+   - Insert arguments starting with lowercase letters at the end (in order)
+   - Before inserting, check if the word exists using findNode; if it exists, delete it first
+   - Print the linked list using displayLinkedList
+
+4. Implement these functions:
+   - void insertAtBeginning(struct Linkedlist* LL, char ele[])
+   - void insertAtTheEnd(struct Linkedlist* LL, char ele[])
+   - void deleteNode(struct Linkedlist* LL, char ele[])
+   - int findNode(struct Linkedlist LL, char ele[])
+   - void displayLinkedList(struct Linkedlist LL)
+
+5. For insertion functions: use malloc/calloc, use strlen to get size, allocate string, use strcpy
+6. For deletion: free both the node and the string data
+7. displayLinkedList should print data separated by commas
+
+Error handling: Print "ERROR: The program must read at least an argument." if no arguments provided.
+
+Step 3: It ran correctly first try. I used the command "gcc lab1p4.c -o lab1p4" to compile the program and then "./lab1p4" to run it. I think the framework I provided allowed the ai to structure its code well and have accurate results immediately.
+
