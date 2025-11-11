@@ -8,6 +8,8 @@ Effort Distribution: 50% Allyson Morris 50% Krishna Swaminathan
 
 Total Time Spent: 6 hours total
 
+One challenge was implementing bitMask correctly. We initially struggled with edge cases when the high and low bits were the same.
+
 How to Run:
 make btest
 ./btest
