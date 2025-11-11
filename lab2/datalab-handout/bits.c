@@ -140,7 +140,6 @@ NOTES:
  */
 int bitAnd(int x, int y) {
   return ~(~x | ~y);
-  //return 2;
 }
 /* 
  * copyLSB - set all bits of result to least significant bit of x
@@ -363,7 +362,7 @@ unsigned float_i2f(int x) {
     frac = (absx >> 8) & 0x7FFFFF;
     round_bit = absx & 0xFF;
 
-    // round to nearest even
+    // Round to the nearest even
     if (round_bit > 128 || (round_bit == 128 && (frac & 1))) {
         frac++;
         if (frac >> 23) {
