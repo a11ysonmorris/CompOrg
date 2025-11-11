@@ -1,0 +1,14 @@
+CSCI 304 – Lab 2: Bit Manipulations
+Due: November 11, 2025, 11:59:59 PM
+
+Student Name(s): Allyson Morris & Krishna Swaminathan
+Login ID(s): ammorris02
+Effort Distribution: 50% Allyson Morris 50% Krishna Swaminathan
+(If working with a partner, specify exact percentages)
+
+Total Time Spent: 6 hours total
+
+How to Run:
+make btest
+./btest
+
