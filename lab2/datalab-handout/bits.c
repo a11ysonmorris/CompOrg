@@ -138,6 +138,8 @@ NOTES:
  *   Max ops: 8
  *   Rating: 1
  */
+
+ /* Use De Morgan’s law to get x & y with only ~ and | */
 int bitAnd(int x, int y) {
   return ~(~x | ~y);
 }
@@ -148,6 +150,8 @@ int bitAnd(int x, int y) {
  *   Max ops: 5
  *   Rating: 2
  */
+
+/* Extend the least significant bit across all bits */
 int copyLSB(int x) {
    return (x << 31) >> 31;
 }
@@ -159,6 +163,8 @@ int copyLSB(int x) {
  *   Max ops: 6
  *   Rating: 2
  */
+
+/* Shift target byte to the right and mask with 0xFF */
 int getByte(int x, int n) {
   return (x >> (n << 3)) & 0xFF;
 }
@@ -169,6 +175,8 @@ int getByte(int x, int n) {
  *   Max ops: 5
  *   Rating: 2
  */
+
+/* True if x and y are the same value */
 int isEqual(int x, int y) {
   return !(x ^ y);
 }
@@ -182,6 +190,8 @@ int isEqual(int x, int y) {
  *   Max ops: 16
  *   Rating: 3
  */
+
+/* Build a mask of 1s between lowbit and highbit */
 int bitMask(int highbit, int lowbit) {
     int all_ones = ~0;
     int high_mask = all_ones << highbit << 1; 
@@ -195,6 +205,8 @@ int bitMask(int highbit, int lowbit) {
  *   Max ops: 25
  *   Rating: 3
  */
+
+/* Reverse the order of all four bytes in x */
 int reverseBytes(int x) {
     int byte0 = (x & 0xFF) << 24;
     int byte1 = (x & (0xFF << 8)) << 8;
@@ -210,6 +222,8 @@ int reverseBytes(int x) {
  *   Max ops: 12
  *   Rating: 4 
  */
+
+/* Check if x is zero using sign bits of x and -x */
 int bang(int x) {
     int neg_x = ~x + 1;
     int sign_bits = (x | neg_x) >> 31;
@@ -223,6 +237,8 @@ int bang(int x) {
  *   Max ops: 6
  *   Rating: 2 
  */
+
+/* Return only the lowest 1-bit in x */
 int leastBitPos(int x) {
     return x & (~x + 1);
 }
@@ -232,6 +248,8 @@ int leastBitPos(int x) {
  *   Max ops: 2
  *   Rating: 1
  */
+
+/* ~0 gives -1 in two’s complement */
 int minusOne(void) {
     return ~0;  
 }
@@ -241,6 +259,8 @@ int minusOne(void) {
  *   Max ops: 4
  *   Rating: 1
  */
+
+/* Make the largest two’s complement value */
 int tmax(void) {
     return ~(1 << 31);
 }
@@ -253,6 +273,8 @@ int tmax(void) {
  *   Max ops: 15
  *   Rating: 2
  */
+
+/* See if x fits in n bits after shifting */
 int fitsBits(int x, int n) {
     int shift = 33 + (~n);
     int shifted = (x << shift) >> shift;
@@ -266,6 +288,8 @@ int fitsBits(int x, int n) {
  *   Max ops: 20
  *   Rating: 3
  */
+
+/* Check if adding x and y causes overflow */
 int addOK(int x, int y) {
     int sum = x + y;
     int sign_x = x >> 31;
@@ -281,6 +305,8 @@ int addOK(int x, int y) {
  *   Max ops: 24
  *   Rating: 3
  */
+
+/* Return 1 if x is greater than y */
 int isGreater(int x, int y) {
     int sign_x = (x >> 31) & 1;
     int sign_y = (y >> 31) & 1;
@@ -298,6 +324,8 @@ int isGreater(int x, int y) {
  *   Max ops: 6
  *   Rating: 2
  */
+
+/* Return 1 if x is negative */
 int isNegative(int x) {
     return (x >> 31) & 1;
 }
@@ -312,6 +340,8 @@ int isNegative(int x) {
  *   Max ops: 12
  *   Rating: 3
  */
+
+/* Multiply by 5/8 and round toward zero */
 int multFiveEighths(int x) {
     int times_five = (x << 2) + x;
     int sign = times_five >> 31;
@@ -327,6 +357,8 @@ int multFiveEighths(int x) {
  *   Max ops: 15
  *   Rating: 4
  */
+
+/* Convert from sign-magnitude to two’s complement */
 int sm2tc(int x) {
     int sign = x >> 31;
     int magnitude = x & ~(1 << 31);
@@ -342,6 +374,8 @@ int sm2tc(int x) {
  *   Max ops: 30
  *   Rating: 4
  */
+
+/* Convert an int to its float bit representation */
 unsigned float_i2f(int x) {
     unsigned sign, frac, exp;
     unsigned absx, round_bit;
