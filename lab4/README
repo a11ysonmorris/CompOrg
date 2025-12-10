@@ -1,9 +1,9 @@
-Student name(s): Your Full Name
-Effort distribution: 100% (I worked alone)
+Student name(s): Allyson Morris & Krishna Swaminathan
+Effort distribution: 50% 50%
 Total time spent: X hours
 
 How to run (on CS lab machine with multilib installed):
-1) Compile hand-written assembly:
+1) Compile assembly:
    gcc -m32 -o sos-by-hand sos-by-hand.s
    ./sos-by-hand 3 4
 
@@ -17,9 +17,6 @@ How to run (on CS lab machine with multilib installed):
    gcc -m32 -o sos-O3 sos_O3.s
    ./sos-O3 3 4
 
-4) (Optional) Y86: Tested sos.ys on an online Y86 simulator (name: <write which one>).
-   Files included: sos.ys (source), sos.yo (assembled output).
-
-Notes / issues:
+Notes/issues:
 - I ran the Y86 steps on an online simulator since the lab tools on my machine required additional libraries.
 - Observations: GCC -O3 optimized sq and sos by reducing frame setup and using register arithmetic.
