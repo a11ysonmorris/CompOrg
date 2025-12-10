@@ -1,0 +1,56 @@
+# sos.ys - Y86 version of sos.c
+# Computes sos(a,b) = sq(a) + sq(b)
+
+# --- Data Section ---
+    .pos 0x100
+a:  .long 3        # example input a=3
+b:  .long 4        # example input b=4
+res: .long 0       # store result
+
+# --- Code Section ---
+    .pos 0x0
+# sq(int x) { return x*x; }
+sq:
+    pushl %ebp
+    rrmovl %esp, %ebp
+    mrmovl 8(%ebp), %eax
+    rrmovl %eax, %edx
+    mull %edx, %eax   # eax = x*x
+    popl %ebp
+    ret
+
+# sos(int a, int b) { return sq(a) + sq(b); }
+sos:
+    pushl %ebp
+    rrmovl %esp, %ebp
+    pushl %ebx
+    mrmovl 8(%ebp), %eax
+    call sq
+    rrmovl %eax, %ebx      # save sq(a) in ebx
+    mrmovl 12(%ebp), %eax
+    call sq
+    addl %ebx, %eax        # eax = sq(a) + sq(b)
+    popl %ebx
+    popl %ebp
+    ret
+
+# main() - sets arguments, calls sos, stores result
+main:
+    irmovl a, %eax       # load address of a
+    mrmovl (%eax), %eax  # eax = a
+    pushl %eax           # push argument 1
+
+    irmovl b, %eax
+    mrmovl (%eax), %eax  # eax = b
+    pushl %eax           # push argument 2
+
+    call sos
+    addl $8, %esp        # clean arguments
+
+    # store result in res
+    irmovl res, %edx
+    rrmovl %eax, %ecx
+    rmmovl %ecx, (%edx)
+
+    halt
+
